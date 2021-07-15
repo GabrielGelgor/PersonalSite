@@ -1,10 +1,12 @@
+import { Sorter } from "./Sorter";
+
 class Node {
     next: Node | null = null;
 
     constructor(public data: number) { }
 }
 
-export class LinkedList { 
+export class LinkedList extends Sorter { 
     head: Node | null = null;
 
     get length(): number {
@@ -39,12 +41,12 @@ export class LinkedList {
     at(index: number): Node {
         const len = this.length;
 
-        if (index > len || 0 < index || len === 0 ) {
+        if (!this.head) {
             throw new Error('Index out of bounds');
         }
 
         let counter = 0;
-        let node = this.head;
+        let node: Node | null = this.head;
 
         while(node) {
             if (counter === index) {
