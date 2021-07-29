@@ -1,0 +1,6 @@
+//enums in TS
+export enum MatchResult {
+    HomeWin = 'H',
+    AwayWin = 'A',
+    Draw = 'D'
+};
